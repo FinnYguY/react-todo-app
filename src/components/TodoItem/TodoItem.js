@@ -14,16 +14,16 @@ export default function TodoItem(props) {
 
   return (
     <div className="todo-item">
-      <span className="todo-item__desc">
+      <div className="todo-item__desc">
         <input
           type="checkbox"
           className="checkbox"
           checked={todo.isDone}
           onChange={() => dispatch(toggleTodo(todo.id))}
         />
-        <span className="id">{index + 1}</span>
-        <span className={titleClasses.join(" ")}>{todo.todo}</span>
-      </span>
+        <div className="id">{index + 1}</div>
+        <div className={titleClasses.join(" ")}>{todo.todo}</div>
+      </div>
       <button
         className="todo-item__remove"
         onClick={() => dispatch(removeTodo(todo.id))}

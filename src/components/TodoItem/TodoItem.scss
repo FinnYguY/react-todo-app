@@ -1,17 +1,23 @@
 .todo-item {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   border: 2px solid gray;
   padding: 10px 0;
-  width: 500px;
+  width: 600px;
 
   &:not(:first-child) {
     margin-top: -2px;
   }
 
   &__desc {
+    display: flex;
+    align-items: center;
+
     .checkbox {
       margin: 0 5px 0 10px;
+      display: block;
     }
 
     .id {
@@ -20,6 +26,8 @@
     }
 
     .title {
+      width: 450px;
+      word-wrap: break-word;
     }
 
     .done {
