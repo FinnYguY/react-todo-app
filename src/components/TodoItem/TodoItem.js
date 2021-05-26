@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
-import Context from "../../context";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { toggleTodo, removeTodo } from "../../store/actions";
 import "./TodoItem.scss";
 
 export default function TodoItem(props) {
-  const { todo, index, onChange } = props;
-  const { removeTodo } = useContext(Context);
+  const { todo, index } = props;
+  const dispatch = useDispatch();
   const titleClasses = ["title"];
 
   if (todo.isDone) {
@@ -18,12 +19,15 @@ export default function TodoItem(props) {
           type="checkbox"
           className="checkbox"
           checked={todo.isDone}
-          onChange={() => onChange(todo.id)}
+          onChange={() => dispatch(toggleTodo(todo.id))}
         />
         <span className="id">{index + 1}</span>
         <span className={titleClasses.join(" ")}>{todo.todo}</span>
       </span>
-      <button className="todo-item__remove" onClick={() => removeTodo(todo.id)}>
+      <button
+        className="todo-item__remove"
+        onClick={() => dispatch(removeTodo(todo.id))}
+      >
         &times;
       </button>
     </div>

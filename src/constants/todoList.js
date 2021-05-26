@@ -1,9 +1,9 @@
-export const actions = {
-  ADD_TODO: "addTodo",
-  COMPLETE_TODO: "completeTodo",
-  DELETE_TODO: "deleteTodo",
+export const actionTypes = {
+  ADD_TODO: "ADD_TODO",
+  TOGGLE_TODO: "TOGGLE_TODO",
+  REMOVE_TODO: "REMOVE_TODO",
 };
 
-Object.freeze(actions);
+Object.freeze(actionTypes);
 
-export default actions;
+export default actionTypes;

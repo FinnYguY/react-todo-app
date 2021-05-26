@@ -1,0 +1,22 @@
+.header {
+  margin-top: 20px;
+  font-size: 28px;
+
+  .link,
+  .link:visited,
+  .link:active {
+    font-size: 28px;
+    cursor: pointer;
+    color: #61b2fb;
+    padding: 2px 7px;
+    transition: 0.5s;
+    outline: none;
+    border: 2px solid white;
+  }
+
+  .link:hover {
+    color: #61dafb;
+    border: 2px solid #61dafb;
+    background-color: #282c34;
+  }
+}

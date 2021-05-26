@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../../store/actions";
 import "./AddTodo.scss";
 
 function useInputValue(defaultValue = "") {
@@ -14,14 +16,15 @@ function useInputValue(defaultValue = "") {
   };
 }
 
-export default function AddTodo({ onCreate }) {
+export default function AddTodo() {
   const input = useInputValue("");
+  const dispatch = useDispatch();
 
   function submitHandler(event) {
     event.preventDefault();
 
     if (input.value().trim()) {
-      onCreate(input.value());
+      dispatch(addTodo(input.value()));
       input.clear();
     }
   }

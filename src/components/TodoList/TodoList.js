@@ -3,19 +3,12 @@ import TodoItem from "../TodoItem/TodoItem";
 import "./TodoList.scss";
 
 export default function TodoList(props) {
-  const { todoList, onToggle } = props;
+  const { todoList } = props;
 
   return (
     <div>
       {todoList.map((todo, index) => {
-        return (
-          <TodoItem
-            key={todo.id}
-            todo={todo}
-            index={index}
-            onChange={onToggle}
-          />
-        );
+        return <TodoItem key={todo.id} todo={todo} index={index} />;
       })}
     </div>
   );
