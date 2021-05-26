@@ -6,17 +6,32 @@ function getMaxId(todoList) {
   }, -1);
 }
 
-const initialState = {
-  todoList: [
-    { id: 1, todo: "Plant a house", isDone: false },
-    { id: 2, todo: "Build a tree", isDone: true },
-  ],
-};
+function getInitialState() {
+  let state = localStorage.getItem("state");
+
+  if (state) {
+    return JSON.parse(state);
+  }
+
+  state = {
+    todoList: [
+      { id: 1, todo: "Plant a house", isDone: false },
+      { id: 2, todo: "Build a tree", isDone: true },
+    ],
+  };
+
+  localStorage.setItem("state", JSON.stringify(state));
+  return state;
+}
+
+const initialState = getInitialState();
 
 function reducer(state = initialState, action) {
+  let newState = {};
+
   switch (action.type) {
     case actionTypes.ADD_TODO:
-      return {
+      newState = {
         ...state,
         todoList: [
           ...state.todoList,
@@ -28,8 +43,12 @@ function reducer(state = initialState, action) {
         ],
       };
 
+      localStorage.setItem("state", JSON.stringify(newState));
+
+      return newState;
+
     case actionTypes.TOGGLE_TODO:
-      return {
+      newState = {
         ...state,
         todoList: state.todoList.map((todo) => {
           if (todo.id === action.id) {
@@ -42,13 +61,21 @@ function reducer(state = initialState, action) {
         }),
       };
 
+      localStorage.setItem("state", JSON.stringify(newState));
+
+      return newState;
+
     case actionTypes.REMOVE_TODO:
-      return {
+      newState = {
         ...state,
         todoList: state.todoList.filter((todo) => {
           return todo.id !== action.id;
         }),
       };
+
+      localStorage.setItem("state", JSON.stringify(newState));
+
+      return newState;
 
     default:
       return state;
