@@ -1,4 +1,4 @@
-import actionTypes from "../constants/todoList";
+import todoActionTypes from "../constants/todoList";
 
 function getMaxId(todoList) {
   return todoList.reduce((maxId, todo) => {
@@ -30,7 +30,7 @@ function reducer(state = initialState, action) {
   let newState = {};
 
   switch (action.type) {
-    case actionTypes.ADD_TODO:
+    case todoActionTypes.ADD_TODO:
       newState = {
         ...state,
         todoList: [
@@ -47,7 +47,7 @@ function reducer(state = initialState, action) {
 
       return newState;
 
-    case actionTypes.TOGGLE_TODO:
+    case todoActionTypes.TOGGLE_TODO:
       newState = {
         ...state,
         todoList: state.todoList.map((todo) => {
@@ -65,7 +65,7 @@ function reducer(state = initialState, action) {
 
       return newState;
 
-    case actionTypes.REMOVE_TODO:
+    case todoActionTypes.REMOVE_TODO:
       newState = {
         ...state,
         todoList: state.todoList.filter((todo) => {

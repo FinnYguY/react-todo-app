@@ -1,16 +1,22 @@
-import actionTypes from "../constants/todoList";
+import todoActionTypes from "../constants/todoList";
+import filterActionTypes from "../constants/filter";
 
 export const addTodo = (todo) => ({
-  type: actionTypes.ADD_TODO,
+  type: todoActionTypes.ADD_TODO,
   todo,
 });
 
 export const toggleTodo = (id) => ({
-  type: actionTypes.TOGGLE_TODO,
+  type: todoActionTypes.TOGGLE_TODO,
   id,
 });
 
 export const removeTodo = (id) => ({
-  type: actionTypes.REMOVE_TODO,
+  type: todoActionTypes.REMOVE_TODO,
   id,
+});
+
+export const setFilter = (filter) => ({
+  type: filterActionTypes.SET_FILTER,
+  filter,
 });
