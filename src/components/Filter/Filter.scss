@@ -1,7 +1,7 @@
 .filter__button {
   text-align: center;
-  padding: 0 5px;
   width: 150px;
+  user-select: none;
   // border-radius: 0px;
 
   // &:first-child {
@@ -13,4 +13,8 @@
   //   border-top-right-radius: 25px;
   //   border-bottom-right-radius: 25px;
   // }
+
+  &_active {
+    background-color: aquamarine;
+  }
 }

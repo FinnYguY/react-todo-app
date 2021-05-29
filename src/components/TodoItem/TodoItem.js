@@ -1,16 +1,16 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { toggleTodo, removeTodo } from "../../store/actions";
+import classNames from "classnames";
 import "./TodoItem.scss";
 
 export default function TodoItem(props) {
   const { todo, index } = props;
   const dispatch = useDispatch();
-  const titleClasses = ["title"];
-
-  if (todo.isDone) {
-    titleClasses.push("done");
-  }
+  const titleClasses = classNames({
+    title: true,
+    done: todo.isDone,
+  });
 
   return (
     <div className="todo-item">
@@ -22,7 +22,7 @@ export default function TodoItem(props) {
           onChange={() => dispatch(toggleTodo(todo.id))}
         />
         <div className="id">{index + 1}</div>
-        <div className={titleClasses.join(" ")}>{todo.todo}</div>
+        <div className={titleClasses}>{todo.todo}</div>
       </div>
       <button
         className="todo-item__remove"

@@ -8,11 +8,7 @@ export default function FilterList() {
     <div className="filter-list">
       {filterNames.map((filter, index) => {
         return (
-          <Filter
-            key={index}
-            className="filter-list__item"
-            filter={`SHOW_${filter.toUpperCase()}`}
-          >
+          <Filter key={index} filter={`SHOW_${filter.toUpperCase()}`}>
             {filter}
           </Filter>
         );

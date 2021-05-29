@@ -1,7 +1,13 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
-import reducer from "./reducer";
+import todoListReducer from "./todoListReducer";
+import filterReducer from "./filterReducer";
 
-const store = configureStore({ reducer });
+const rootReducer = combineReducers({
+  todoList: todoListReducer,
+  filter: filterReducer,
+});
+
+const store = configureStore({ reducer: rootReducer });
 
 export default store;

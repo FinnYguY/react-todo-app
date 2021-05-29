@@ -26,7 +26,7 @@ function getInitialState() {
 
 const initialState = getInitialState();
 
-function reducer(state = initialState, action) {
+function todoListReducer(state = initialState, action) {
   let newState = {};
 
   switch (action.type) {
@@ -82,4 +82,4 @@ function reducer(state = initialState, action) {
   }
 }
 
-export default reducer;
+export default todoListReducer;
