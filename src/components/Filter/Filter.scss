@@ -1,20 +1,32 @@
-.filter__button {
-  text-align: center;
-  width: 150px;
-  user-select: none;
-  // border-radius: 0px;
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
-  // &:first-child {
-  //   border-top-left-radius: 25px;
-  //   border-bottom-left-radius: 25px;
-  // }
-  //
-  // &:last-child {
-  //   border-top-right-radius: 25px;
-  //   border-bottom-right-radius: 25px;
-  // }
+.filter__button {
+  @include default-button;
+  width: 170px;
+  border: none;
+  border-radius: 0px;
+  padding: 7px 0px 5px;
+
+  &:first-child {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+
+  &:not(:first-child) {
+    margin-left: -2px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
 
   &_active {
-    background-color: aquamarine;
+    background-color: $golden-color;
+
+    &:hover {
+      background-color: $golden-color-hover;
+    }
   }
 }

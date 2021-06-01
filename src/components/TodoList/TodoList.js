@@ -7,8 +7,8 @@ export default function TodoList(props) {
 
   return (
     <div className="todo-list">
-      {todoList.map((todo, index) => {
-        return <TodoItem key={todo.id} todo={todo} index={index} />;
+      {todoList.map((todo) => {
+        return <TodoItem key={todo.id} todo={todo} />;
       })}
     </div>
   );

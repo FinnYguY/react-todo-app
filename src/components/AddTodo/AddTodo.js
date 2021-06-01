@@ -31,7 +31,7 @@ export default function AddTodo() {
 
   return (
     <form className="form" onSubmit={submitHandler}>
-      <input className="form__input" {...input.bind} />
+      <input className="form__input" placeholder="New todo" {...input.bind} />
       <button className="form__submit" type="submit">
         Add
       </button>

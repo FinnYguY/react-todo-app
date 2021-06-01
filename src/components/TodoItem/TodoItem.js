@@ -4,24 +4,23 @@ import { toggleTodo, removeTodo } from "../../store/actions";
 import classNames from "classnames";
 import "./TodoItem.scss";
 
-export default function TodoItem(props) {
-  const { todo, index } = props;
+export default function TodoItem({ todo }) {
   const dispatch = useDispatch();
   const titleClasses = classNames({
     title: true,
-    done: todo.isDone,
+    "title-done": todo.isDone,
   });
 
   return (
     <div className="todo-item">
       <div className="todo-item__desc">
         <input
+          id={`box-${todo.id}`}
           type="checkbox"
-          className="checkbox"
           checked={todo.isDone}
           onChange={() => dispatch(toggleTodo(todo.id))}
         />
-        <div className="id">{index + 1}</div>
+        <label htmlFor={`box-${todo.id}`}>&nbsp;</label>
         <div className={titleClasses}>{todo.todo}</div>
       </div>
       <button

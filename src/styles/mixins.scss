@@ -1,0 +1,19 @@
+@import "./variables.scss";
+
+@mixin default-button {
+  padding: 7px 10px 5px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: $gray-color;
+  user-select: none;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $gray-color-hover;
+  }
+}
+
+@mixin default-checkbox {
+}

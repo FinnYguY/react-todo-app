@@ -1,11 +1,32 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
 .form {
   margin: 20px;
+  user-select: none;
 
   &__input {
     width: 400px;
+    outline: none;
+    border: none;
+    background-color: $gray-color;
+    padding: 7px 50px 5px 10px;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: $left-shadow;
   }
 
   &__submit {
-    padding: 0 5px;
+    @include default-button;
+    margin-left: -40px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: $golden-color;
+    box-shadow: $right-shadow;
+
+    &:hover {
+      background-color: $golden-color-hover;
+    }
   }
 }
