@@ -65,6 +65,24 @@ function todoListReducer(state = initialState, action) {
 
       return newState;
 
+    case todoActionTypes.EDIT_TODO:
+      newState = {
+        ...state,
+        todoList: state.todoList.map((todo) => {
+          if (todo.id === action.id) {
+            return {
+              ...todo,
+              todo: action.todo,
+            };
+          }
+          return todo;
+        }),
+      };
+
+      localStorage.setItem("state", JSON.stringify(newState));
+
+      return newState;
+
     case todoActionTypes.REMOVE_TODO:
       newState = {
         ...state,

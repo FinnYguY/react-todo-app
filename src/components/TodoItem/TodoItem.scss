@@ -6,8 +6,10 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border: none;
   padding: 10px 0;
-  width: 600px;
+  margin: 10px;
+  width: 650px;
   user-select: none;
 
   &__desc {
@@ -16,7 +18,8 @@
 
     .title {
       width: 450px;
-      margin: 0 0 0 10px;
+      margin-left: 10px;
+      padding-top: 2px;
       word-wrap: break-word;
 
       &::first-letter {
@@ -28,23 +31,62 @@
       text-decoration: line-through;
       opacity: 0.6;
     }
+
+    .form {
+      margin: -2px 0;
+
+      input {
+        width: 400px;
+      }
+    }
   }
 
-  &__remove {
-    font-weight: bold;
-    color: $red-color;
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    padding: 0 5px;
+    margin: 0 5px;
+  }
+
+  &__button {
     border: none;
     background-color: transparent;
     font-size: 32px;
-    padding: 0 10px;
-    margin: 0 10px;
+    padding: 0 5px;
+    margin: 0 5px;
     opacity: 0.5;
     cursor: pointer;
+    outline: none;
+    transition: 0.3s;
 
     &:hover {
       opacity: 1;
-      color: $red-color-hover;
       transform: scale(1.5);
     }
+  }
+}
+
+.edit {
+  opacity: 0.2;
+  color: black;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+
+  .fa-edit {
+    font-size: 20px;
+  }
+
+  &:hover {
+    color: dimgray;
+  }
+}
+
+.remove {
+  font-weight: bold;
+  color: $red-color;
+
+  &:hover {
+    color: $red-color-hover;
   }
 }
