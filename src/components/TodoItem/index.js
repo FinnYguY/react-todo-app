@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggleTodo, removeTodo, editTodo } from "../../store/actions";
-import InputForm from "../InputForm/InputForm";
+import InputForm from "../InputForm/";
 import classNames from "classnames";
 import "./TodoItem.scss";
 

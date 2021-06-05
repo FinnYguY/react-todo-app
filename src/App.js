@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { filterTypes } from "./constants/filter";
 import { showModal } from "./store/actions";
 
-import Modal from "./components/Modal/Modal";
-import AddTodo from "./components/AddTodo/AddTodo";
-import TodoList from "./components/TodoList/TodoList";
-import FilterList from "./components/FilterList/FilterList";
+import Modal from "./components/Modal/";
+import AddTodo from "./components/AddTodo/";
+import TodoList from "./components/TodoList/";
+import FilterList from "./components/FilterList/";
 
 export default function App() {
   const dispatch = useDispatch();

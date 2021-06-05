@@ -1,5 +1,5 @@
 import React from "react";
-import Filter from "../Filter/Filter";
+import Filter from "../Filter/";
 import { filterNames } from "../../constants/filter";
 import "./FilterList.scss";
 
