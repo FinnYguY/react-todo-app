@@ -1,6 +1,17 @@
 import modalActionTypes from "../constants/modal";
 
-const initialState = false;
+function getInitialState() {
+  if (!localStorage.getItem("isFirstVisit")) {
+    localStorage.setItem("isFirstVisit", "true");
+  }
+  if (localStorage.getItem("isFirstVisit") === "true") {
+    localStorage.setItem("isFirstVisit", "false");
+    return true;
+  }
+  return false;
+}
+
+const initialState = getInitialState();
 
 function modalReducer(state = initialState, action) {
   switch (action.type) {

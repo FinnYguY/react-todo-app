@@ -12,15 +12,6 @@ export default function App() {
   const dispatch = useDispatch();
   const todoList = useSelector((state) => state.todoList.todoList);
   const filter = useSelector((state) => state.filter);
-  const isModalShown = useSelector((state) => state.showModal);
-
-  if (!localStorage.getItem("isFirstVisit")) {
-    localStorage.setItem("isFirstVisit", "true");
-  }
-  if (localStorage.getItem("isFirstVisit") === "true") {
-    dispatch(showModal());
-    localStorage.setItem("isFirstVisit", "false");
-  }
 
   function getFilteredList(todoList, filter) {
     switch (filter) {
@@ -62,16 +53,14 @@ export default function App() {
           the tab and be sure that those 'todos' still exist : )
         </p>
       </Modal>
-      {!isModalShown && (
-        <div className="footer">
-          <button
-            className="default-button"
-            onClick={() => dispatch(showModal())}
-          >
-            Show info
-          </button>
-        </div>
-      )}
+      <div className="footer">
+        <button
+          className="default-button"
+          onClick={() => dispatch(showModal())}
+        >
+          Show info
+        </button>
+      </div>
     </div>
   );
 }
