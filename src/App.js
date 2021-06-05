@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { filterTypes } from "./constants/filter";
 import { showModal } from "./store/actions";
 
 import Modal from "./components/Modal/";
@@ -11,18 +10,6 @@ import FilterList from "./components/FilterList/";
 export default function App() {
   const dispatch = useDispatch();
   const todoList = useSelector((state) => state.todoList.todoList);
-  const filter = useSelector((state) => state.filter);
-
-  function getFilteredList(todoList, filter) {
-    switch (filter) {
-      case filterTypes.SHOW_ACTIVE:
-        return todoList.filter((todo) => !todo.isDone);
-      case filterTypes.SHOW_COMPLETED:
-        return todoList.filter((todo) => todo.isDone);
-      default:
-        return todoList;
-    }
-  }
 
   return (
     <div className="wrapper">
@@ -36,7 +23,7 @@ export default function App() {
         <AddTodo />
         {todoList.length ? (
           <div>
-            <TodoList todoList={getFilteredList(todoList, filter)} />
+            <TodoList />
             <FilterList />
           </div>
         ) : (
