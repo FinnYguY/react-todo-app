@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../store/actions";
-import "./AddTodo.scss";
+import { form, form__input, form__submit } from "./AddTodo.module.scss";
 
 function useInputValue(defaultValue = "") {
   const [value, setValue] = useState("");
@@ -30,9 +30,9 @@ export default function AddTodo() {
   }
 
   return (
-    <form className="form" onSubmit={submitHandler}>
-      <input className="form__input" placeholder="New todo" {...input.bind} />
-      <button className="form__submit" type="submit">
+    <form className={form} onSubmit={submitHandler}>
+      <input className={form__input} placeholder="New todo" {...input.bind} />
+      <button className={form__submit} type="submit">
         Add
       </button>
     </form>
