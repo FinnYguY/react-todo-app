@@ -3,9 +3,10 @@ import { useDispatch } from "react-redux";
 import { toggleTodo, removeTodo, editTodo } from "../../store/actions";
 import InputForm from "../InputForm/";
 import classNames from "classnames";
+import PropTypes from "prop-types";
 import "./TodoItem.scss";
 
-export default function TodoItem({ todo }) {
+function TodoItem({ todo }) {
   const dispatch = useDispatch();
   const [toEdit, setToEdit] = useState(false);
   const [inputValue, setInputValue] = useState("");
@@ -65,3 +66,9 @@ export default function TodoItem({ todo }) {
     </div>
   );
 }
+
+TodoItem.propTypes = {
+  todo: PropTypes.object.isRequired,
+};
+
+export default TodoItem;

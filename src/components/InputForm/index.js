@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./InputForm.scss";
 
-export default function InputForm({
+function InputForm({
   submitHandler,
   defaultValue,
   placeholder,
@@ -22,3 +23,13 @@ export default function InputForm({
     </form>
   );
 }
+
+InputForm.propTypes = {
+  submitHandler: PropTypes.func.isRequired,
+  defaultValue: PropTypes.string,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  children: PropTypes.string.isRequired,
+};
+
+export default InputForm;
