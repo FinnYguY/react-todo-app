@@ -29,6 +29,7 @@ function TodoItem({ todo }) {
       <div className="todo-item__desc">
         <input
           id={`box-${todo.id}`}
+          title="checkbox"
           type="checkbox"
           checked={todo.isDone}
           onChange={() => dispatch(toggleTodo(todo.id))}
