@@ -95,6 +95,20 @@ function todoListReducer(state = initialState, action) {
 
       return newState;
 
+    case todoActionTypes.TODOS_REQUEST:
+      console.log("Requesting to do list...");
+      return state;
+
+    case todoActionTypes.TODOS_SUCCESS:
+      console.log("Request successful:");
+      console.log(action.todos);
+      return state;
+
+    case todoActionTypes.TODOS_FAILURE:
+      console.log("Request failed due to:");
+      console.log(action.e.name + ": " + action.e.message);
+      return state;
+
     default:
       return state;
   }

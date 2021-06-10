@@ -26,3 +26,17 @@ export const setFilter = (filter) => ({
   type: filterActionTypes.SET_FILTER,
   filter,
 });
+
+export const getTodosRequest = () => ({
+  type: todoActionTypes.TODOS_REQUEST,
+});
+
+export const getTodosSuccess = (todos) => ({
+  type: todoActionTypes.TODOS_SUCCESS,
+  todos,
+});
+
+export const getTodosFailure = (e) => ({
+  type: todoActionTypes.TODOS_FAILURE,
+  e,
+});

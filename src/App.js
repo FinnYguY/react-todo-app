@@ -1,6 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { getTodosRequest } from "./store/actions";
 
 import Modal from "./components/Modal/";
 import AddTodo from "./components/AddTodo/";
@@ -9,6 +10,7 @@ import FilterList from "./components/FilterList/";
 
 export default function App() {
   const todoList = useSelector((state) => state.todoList.todoList);
+  const dispatch = useDispatch();
 
   return (
     <Router>
@@ -49,6 +51,12 @@ export default function App() {
               <Link to="/info">
                 <button className="default-button">Show info</button>
               </Link>
+              <button
+                className="default-button"
+                onClick={() => dispatch(getTodosRequest())}
+              >
+                Extract todos to console
+              </button>
             </div>
           </Route>
         </Switch>
