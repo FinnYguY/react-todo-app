@@ -41,3 +41,21 @@ input[type="checkbox"]:checked + label:before {
   border-left-color: transparent;
   transform: rotate(45deg);
 }
+
+@media screen and (max-width: 500px) {
+  input[type="checkbox"] + label {
+    padding-left: 25px;
+    font-size: 25px;
+  }
+
+  input[type="checkbox"] + label:before {
+    width: 20px;
+    height: 20px;
+    border: 3px solid $red-color;
+  }
+
+  input[type="checkbox"]:checked + label:before {
+    left: 8px;
+    border-width: 4px;
+  }
+}

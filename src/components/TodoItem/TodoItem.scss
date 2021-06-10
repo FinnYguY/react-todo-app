@@ -90,3 +90,36 @@
     color: $red-color-hover;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .todo-item {
+    width: 470px;
+
+    &__desc {
+      .title {
+        width: 320px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .todo-item {
+    width: 300px;
+    margin: 0;
+
+    &__desc {
+      .title {
+        width: 150px;
+      }
+
+      .form {
+        margin: -2px 0;
+
+        input {
+          width: 80px;
+        }
+      }
+    }
+  }
+}

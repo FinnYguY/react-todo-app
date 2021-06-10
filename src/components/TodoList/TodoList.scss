@@ -2,3 +2,15 @@
   max-height: 420px;
   overflow: auto;
 }
+
+@media screen and (max-height: 690px) {
+  .todo-list {
+    max-height: 350px;
+  }
+}
+
+@media screen and (max-height: 620px) {
+  .todo-list {
+    max-height: 300px;
+  }
+}

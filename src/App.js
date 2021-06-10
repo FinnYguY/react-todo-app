@@ -22,7 +22,7 @@ export default function App() {
       <div className="content">
         <AddTodo />
         {todoList.length ? (
-          <div>
+          <div className="content__part">
             <TodoList />
             <FilterList />
           </div>
